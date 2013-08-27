@@ -97,6 +97,16 @@ interface PeriodInterface
     public function containsEvent(EventInterface $event);
 
     /**
+     * Returns true if any of the supplied $events are
+     * during this period.
+     *
+     * @param EventInterface[] $events
+     *
+     * @return boolean
+     */
+    public function containsEvents(array $events);
+
+    /**
      * Format the period to a string
      *
      * @param string $format

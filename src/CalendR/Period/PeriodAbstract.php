@@ -141,6 +141,25 @@ abstract class PeriodAbstract implements PeriodInterface
     }
 
     /**
+     * Returns true if any of the supplied $events are
+     * during this period.
+     *
+     * @param EventInterface[] $events
+     *
+     * @return boolean
+     */
+    public function containsEvents(array $events)
+    {
+        foreach($events as $event) {
+            if($this->containsEvent($event)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Format the period to a string
      *
      * @param string $format
